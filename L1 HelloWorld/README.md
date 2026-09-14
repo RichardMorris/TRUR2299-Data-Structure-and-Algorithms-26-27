@@ -33,3 +33,9 @@ Compile the .o files to make an executable
 Run with 
 
 ```./hello.exe```
+
+# Git configuration
+
+* Create a new project on GitHub
+* Set .gitignore option to C++
+* 

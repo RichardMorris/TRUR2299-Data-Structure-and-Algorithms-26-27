@@ -38,4 +38,45 @@ Run with
 
 * Create a new project on GitHub
 * Set .gitignore option to C++
-* 
+* Create the project
+* Copy clone URL like `https://github.com/RichardMorris/TRUR2299-Data-Structure-and-Algorithms-26-27.git` from GitHub.
+* In VS-Code open a new window and choose the "Clone Git Repository..." option
+* Paste in the clone URL.
+* Commit your first file
+* In a Git Bash prompt enter
+* ```git config  user.name "RichardMorris"```
+* In GitHub navigate to settings->developer settings->personal acess tokens (classic)
+* Generate a new token with repo scope, and expiry date in July next year. Copy this.
+* In Git Bash type
+```git push```
+* Paste in the Access Token when the window pops up.
+
+# Input example
+
+There are several different methods for reading from the standard input.
+
+`scanf` scans the input using a format string.
+* `scanf(format, addr1, addr2, ...)`
+* where `format` consists of
+  * `%d` for integers, 
+  * `%c` for single character, 
+  * `%s` for strings (end at whitespace)
+  * `%f` for floating point
+* `addr1` is the address of a variable `&number` etc. Think of this as the position in memory where the value of the variable is stored.
+* For a character array `char name[10];` you just use `name` for the address
+
+`getchar` read a single character
+* `int ch = getchar()`
+* return the next character code, 
+  * 0x0d for new-line
+  * EOF = -1 - for end of input 
+  * ascsii character 
+
+`fgets` reads a line of text into a buffer
+* `char line[200];`
+* `fgets(line, sizeof(line), stdin);`
+  * `line` is a array variable
+  * `sizeof(line)` is max number of characters to read 
+  * `stdin` is the standard terminal input
+
+  Use `gcc -o input.exe input.c` to compile direct to an executable. 

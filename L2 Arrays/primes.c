@@ -6,13 +6,15 @@
 
 int main(int argc, char *argv[]) {
     unsigned short primes[MAX_PRIMES];
+    int num_primes;
     if(argc < 2) {
         printf("Usage: %s <num_primes>\n", argv[0]);
-        return -1; // non zero exit code for error
+        num_primes = 100; // use default so can run debugger easily
+    } else {
+        num_primes = atoi(argv[1]);
     }
-    printf("%s: Finding the first %s prime numbers...\n", argv[0], argv[1]);
+    printf("%s: Finding the first %d prime numbers...\n", argv[0], num_primes);
 
-    int num_primes = atoi(argv[1]);
     primes[0] = 2;
 
     time_t start = clock();

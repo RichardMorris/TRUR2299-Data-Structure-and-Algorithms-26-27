@@ -1,4 +1,4 @@
-# Lesson 2 Arrays 
+# Lesson 5 Arrays 
 
 ## Arrays 1D
 
@@ -6,7 +6,7 @@ In C an array is just a block of memory, elements in the array are stored in mul
 of memory depends on the number of elements
 and the size of the element.
 
-### Integer data types 
+### Recap on Integer data types 
 * `char`/`signed char`   - 1 byte¹, -128 to 127
 * `unsigned char` - 1 byte , 0:255
 * `short`/`short int` - 2 bytes¹, 16 bit, 

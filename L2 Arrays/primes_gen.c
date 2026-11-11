@@ -1,6 +1,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <stdio.h>
 
 #include "primes_gen.h"
 
@@ -8,6 +9,7 @@ struct prime_res generate_primes(int num_primes) {
     struct prime_res result;
 
     unsigned int *primes = malloc(num_primes * sizeof(unsigned int));
+    printf("Address is %p\n", (void*)primes);
     primes[0] = 2;
 
     time_t start = clock();

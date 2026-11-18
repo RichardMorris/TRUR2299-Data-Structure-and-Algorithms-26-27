@@ -3,21 +3,25 @@
 #include "primes_gen.h"
 
 int main(int argc, char *argv[]) {
-    int num_primes;
+    int step_size;
     if(argc < 2) {
-        printf("Usage: %s <num_primes>\n", argv[0]);
-        num_primes = 100; // use default so can run debugger easily
+        printf("Usage: %s <step_size> <max_num>\n", argv[0]);
+        step_size = 100; // use default so can run debugger easily
     } else {
-        num_primes = atoi(argv[1]);
+        step_size = atoi(argv[1]);
     }
-    printf("%s: Finding the first %d prime numbers...\n", argv[0], num_primes);
 
-    struct prime_res result = generate_primes(num_primes);
-    if(result.last_prime) {
-        printf("%d-th prime number is %d\n", num_primes, result.last_prime);
+    int max_num;
+    if(argc < 3) {
+        max_num = 1000; // use default so can run debugger easily
     } else {
-        printf("Failed to find the %d-th prime number within the limit.\n", num_primes);
+        max_num = atoi(argv[2]);
     }
-    printf("Time taken: %ld ticks\n", (long)result.time_taken);
+
+
+    for(int num_primes = step_size; num_primes <= max_num; num_primes += step_size) {
+        struct prime_res result = generate_primes(num_primes);
+        printf("%d\t%d\t%ld\n", num_primes, result.last_prime, (long)result.time_taken);
+    }
     return 0;
 }

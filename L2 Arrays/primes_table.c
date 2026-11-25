@@ -21,7 +21,8 @@ int main(int argc, char *argv[]) {
 
     for(int num_primes = step_size; num_primes <= max_num; num_primes += step_size) {
         struct prime_res result = generate_primes(num_primes);
-        printf("%d\t%d\t%ld\n", num_primes, result.last_prime, (long)result.time_taken);
+        long time_taken = (long)result.time_taken * 1000 / CLOCKS_PER_SEC;
+        printf("%d\t%d\t%ld ms\n", num_primes, result.last_prime, time_taken);
     }
     return 0;
 }

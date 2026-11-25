@@ -16,6 +16,11 @@ struct prime_res generate_primes(int num_primes) {
     // i is index for the next prime to find
     char isPrimeFlag = 1;
     for (int i = 1; i < num_primes; i++) {
+        if(i % 10000 == 0) {
+            time_t now = clock();
+            printf("Reached %d primes at %ld\n", i, now - start);
+        }
+
         unsigned int candidate = primes[i-1];
         do {
             ++candidate;

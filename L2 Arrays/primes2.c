@@ -18,6 +18,7 @@ int main(int argc, char *argv[]) {
     } else {
         printf("Failed to find the %d-th prime number within the limit.\n", num_primes);
     }
-    printf("Time taken: %ld ticks\n", (long)result.time_taken);
+    long time_ms = result.time_taken* 1000 / CLOCKS_PER_SEC;
+    printf("Time taken: %ld ticks (%ld ms)\n", (long)result.time_taken, time_ms);
     return 0;
 }
